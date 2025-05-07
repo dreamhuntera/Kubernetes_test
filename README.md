@@ -37,7 +37,7 @@ Plan. There must be created 3 instances in the AWS :
 Note: In this example Docker images were build on Ansible server. Next they will be pushed to the Docker Hub. Ansible server will run the playbook, that will execute the kubectl command through Minikube. This will fetch the latest image from Docker Hub.
 
  
-To create the instances. First, I created an account with the AWS. Installed SSH Agent from the list of plug-ins offered by AWS.
+To create the instances. First, I created an account with the AWS. 
 
 1. First instance I lauched was the Jenkins server.
 
@@ -51,6 +51,17 @@ Alongside creating these, there were also installed all the necesary dependencie
 
 Next connect securely with the computer at the IP address found under details public IPv4 address in AWS server instance, log in as the user 'ec2-user', using specific private key file for authentication, the keypair created while lauching the AWS instance and saved into the local machine under the extension .pem 
 
-Namely used this command : ssh -i /Users/dreamhuntera/Downloads/AWS-keypair/ansible-key.pem ec2-user@35.176.40.130  in the terminal (machine: mac OS) 
+Command: ssh -i /path/to/your-key.pem ec2-user@your-instance-public-ip
+
+Installed on Jenkins instance: Jenkins
+    Created a Jenkins account. Installed - SSH Agent - from the list of plug-ins offered by Jenkins: section  Manage Jenkins - Plugins- Available plugins- Restart Jenkins.
+
+2. Second instance: Ansible server.
+
+From AWS, Launch instance. Followed step by step the procedure. Instance type: t2.micro. Created keypair: saved it locally. 
+Launched instance.
+
+- Connect to instance from terminal. Namely used this command : ssh -i /Users/dreamhuntera/Downloads/AWS-keypair/ansible-key.pem ec2-user@35.176.40.130  in the terminal (machine: mac OS) 
+- 
 
 
