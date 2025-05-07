@@ -2,7 +2,7 @@
 Tryout of deployment using CI/CD pipeline. Documenting the steps I took towards this mission.
 
 For trying to minimize all the costs and having in mind there was no heavy project to be deployed I used the free tier version of the Amazon Web Services in this exercise to learn how to apply CI/CD (continuous integration/ continuos deployment).
-I created an account with the AWS to have access to created Instances. 
+I created an account with the AWS to create Instances. 
 
 First of all, there must be created 3 instances in the AWS :
 1. Jenkins server
