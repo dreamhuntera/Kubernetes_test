@@ -62,6 +62,21 @@ From AWS, Launch instance. Followed step by step the procedure. Instance type: t
 Launched instance.
 
 - Connect to instance from terminal. Namely used this command : ssh -i /Users/dreamhuntera/Downloads/AWS-keypair/ansible-key.pem ec2-user@35.176.40.130  in the terminal (machine: mac OS) 
-- 
+- create ansible.sh script in terminal. Run command: nano ansible.sh
+- content of the file:
 
+sudo apt-add-repository ppa:ansible/ansible -y
+sudo apt update -y
+sudo apt install ansible -y
+# Update package lists
+sudo dnf update -y
+
+# Install pip (Python package manager)
+sudo dnf install python3-pip -y
+
+# Install Ansible using pip
+pip3 install ansible --user
+~                             
+- exit and save: press ESC; type :wq ; press Enter
+- execute file. Command: sh ansible.sh
 
