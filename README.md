@@ -1,11 +1,17 @@
 # Kubernetes_test
 Tryout of deployment using CI/CD pipeline. Documenting the steps I took towards this mission.
 **Summary workflow:**
+
     1. Developer writes code
+    
     2. Pushes to **GitHub** → triggers **Jenkins**
+    
     3. Jenkins pulls code, runs tests, builds **Docker image**
+    
     4. Docker image stored (locally or in a registry like Docker Hub)
+    
     5. **Ansible** prepares servers & deploys image
+    
     6. **Kubernetes** runs the containers in production
 
 For trying to minimize all the costs and having in mind there was no heavy project to be deployed I used the free tier version of the Amazon Web Services in this exercise to learn how to apply CI/CD (continuous integration/ continuos deployment).
