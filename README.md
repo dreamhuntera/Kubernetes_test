@@ -73,10 +73,11 @@ sudo dnf update -y
 
 # Install pip (Python package manager)
 sudo dnf install python3-pip -y
-
+ 
 # Install Ansible using pip
 pip3 install ansible --user
 ~                             
 - exit and save: press ESC; type :wq ; press Enter
 - execute file. Command: sh ansible.sh
+
 
