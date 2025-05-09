@@ -80,4 +80,36 @@ pip3 install ansible --user
 - exit and save: press ESC; type :wq ; press Enter
 - execute file. Command: sh ansible.sh
 
+3. Third instance: Kubernetes server
+   
+ From AWS, Launch instance. Followed step by step the procedure. Instance type: t2.micro. 
+ 
+ Note: Usually in need of a bigger space, in the example I am following they used a t2.medium, but I considered that for learning purposes, being free tier, this would be enough. Will see if it will work going on with the steps. If not, I will come back and create another instance.
 
+Created keypair: saved it locally. 
+Launched instance.  
+
+Created in VS Code a simple **Docker file**. Short overview of the content:
+
+- starts Docker image based on latest version of CentOS (popular Linux distribution). Foundation (OS) for the environment in building.
+- add label to the image. Shows who maintains it.
+- Install Apache web server (httpd), zip and unzip tools using CentOS package manager (yum).
+  -y  means = yes to all prompts during installation
+  \  lets you continue command across multiple lines
+
+- Downloads a ZIP file (free website template) from the internet and directs it to a directory container indicated by pathway  "/var/www/html/"
+- Change of the working directory inside the container. All following commands (such as RUN, COPY) will be executed from this location
+- RUN unzip  extracts content of the "photogenic.zip" file in the current directory
+- copies all files from the photogenic subfolder into the current directory
+    -r : recursive(includes subfolders)
+    -v: verbose(shows what is happening)
+    -f : forcce overwrite if needed
+
+- RUN rm -rf  : deletes original ZIP file and the extracted folder since the files are already moved. Purpose: cleap up and reduce image size
+- Runs Apache in the foreground once the container starts. Purpose: Keep the process alive
+- EXPOSE 80 : tells Docker the container will listen on port 80. Defaut port for HTTP web servers
+
+
+
+Created a public GitHub repository **Kubernetes_test**.
+**push** the Docker File in the repository
